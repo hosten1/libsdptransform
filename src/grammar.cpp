@@ -1053,7 +1053,37 @@ namespace sdptransform
 						// format:
 						"mediaclk:%s"
 					},
-
+                    // a=sctp-port:5000
+                   
+                    {
+                        // name:
+                        "sctpPort",
+                        // push:
+                        "",
+                        // reg:
+                        std::regex("^sctp-port:(.*)"),
+                        // names:
+                        { },
+                        // types:
+                        { 'd' },
+                        // format:
+                        "sctp-port:%d"
+                    },
+                    //  a=max-message-size:262144
+                    {
+                        // name:
+                        "maxMessageSize",
+                        // push:
+                        "",
+                        // reg:
+                        std::regex("^max-message-size:(.*)"),
+                        // names:
+                        { },
+                        // types:
+                        { 'd' },
+                        // format:
+                        "max-message-size:%d"
+                    },
 					// Any a= that we don't understand is kepts verbatim on media.invalid.
 					{
 						// name:
@@ -1069,6 +1099,7 @@ namespace sdptransform
 						// format:
 						"%s"
 					},
+                    
 				}
 			}
 		};
